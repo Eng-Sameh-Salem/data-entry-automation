@@ -1,0 +1,20 @@
+url: "https://example.com/forms/customer"
+submit_selector: "button[type='submit']"
+success_check:
+  selector: "div.alert-success"
+  text_contains: "Thank you"
+browser: "chrome"
+headless: false
+fields:
+  first_name: { selector: "#firstName", required: true }
+  last_name:  { selector: "#lastName",  required: true }
+  email:
+    selector: "input[name='email']"
+    required: true
+    validators:
+      - type: regex
+        pattern: "^[^@\s]+@[^@\s]+\.[^@\s]+$"
+        message: "Invalid email format"
+  country:   { selector: "#country",   type: select }
+  newsletter:{ selector: "#newsletter",type: checkbox }
+  notes:     { selector: "textarea[name='notes']", default: "" }
