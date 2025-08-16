@@ -127,4 +127,4 @@ Liam,Brown,liam@sample.org,GB,0,
 ---
 
 ## 📜 License
-MIT
+Apache License 2.0
